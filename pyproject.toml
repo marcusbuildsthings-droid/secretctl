@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "secretctl"
+version = "0.1.0"
+description = "Cross-platform secret storage CLI for AI agents"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Marcus", email = "marcus.builds.things@gmail.com" }]
+keywords = ["secrets", "keychain", "cli", "ai-agent", "credentials"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.9"
+dependencies = ["click>=8.0", "rich>=13.0"]
+
+[project.optional-dependencies]
+linux = ["keyring>=24.0"]
+
+[project.scripts]
+secretctl = "secretctl.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/marcusbuildsthings-droid/secretctl"
+Repository = "https://github.com/marcusbuildsthings-droid/secretctl"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/secretctl"]
