@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "secretctl"
+name = "secretctl-cli"
 version = "0.1.0"
 description = "Cross-platform secret storage CLI for AI agents"
 readme = "README.md"
